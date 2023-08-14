@@ -1,0 +1,17 @@
+[
+  {
+    "name": "MUI Components",
+    "components": [
+      {
+        "filePath": "@mui/material",
+        "exportName": "TextField",
+        "name": "Text Field"
+      },
+      {
+        "filePath": "@mui/material",
+        "exportName": "Autocomplete",
+        "name": "Autocomplete"
+      }
+    ]
+  }
+]
