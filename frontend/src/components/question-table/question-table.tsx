@@ -15,14 +15,14 @@ function createData(name: string, calories: number, fat: number, carbs: number, 
 }
 
 const rows = [
-    createData('MATH 119', 159, 6.0, 24, 4.0),
-    createData('ECE 458', 237, 9.0, 37, 4.3),
-    createData('MSCI 331', 262, 16.0, 24, 6.0),
-    createData('MATH 115', 305, 3.7, 67, 4.3),
-    createData('ECE 106', 356, 16.0, 49, 3.9),
+    createData('Question 1', 159, 6.0, 24, 4.0),
+    createData('Question 2', 237, 9.0, 37, 4.3),
+    createData('Question 3', 262, 16.0, 24, 6.0),
+    createData('Question 4', 305, 3.7, 67, 4.3),
+    createData('Question 5', 356, 16.0, 49, 3.9),
 ];
 
-export interface CourseTableProps {
+export interface QuestionTableProps {
     className?: string;
 }
 
@@ -30,12 +30,12 @@ export interface CourseTableProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-export const CourseTable = ({ className }: CourseTableProps) => {
+export const QuestionTable = ({ className }: QuestionTableProps) => {
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
-                    <TableCell>Courses</TableCell>
+                    <TableCell>Questions</TableCell>
                 </TableHead>
                 <TableBody>
                     {rows.map((row) => (
@@ -43,7 +43,7 @@ export const CourseTable = ({ className }: CourseTableProps) => {
                             key={row.name}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
-                            <Link to={'/questions'}>
+                            <Link to={'/questionAnswer'}>
                                 <TableCell component="th" scope="row">
                                     {row.name}
                                 </TableCell>
