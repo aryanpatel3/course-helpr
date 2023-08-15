@@ -10,16 +10,31 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom';
 
-function createData(name: string, calories: number, fat: number, carbs: number, protein: number) {
-    return { name, calories, fat, carbs, protein };
+function createData(questionTitle: string, questionNumber: number, question: string) {
+    return { questionTitle, questionNumber, question };
 }
 
 const rows = [
-    createData('Question 1', 159, 6.0, 24, 4.0),
-    createData('Question 2', 237, 9.0, 37, 4.3),
-    createData('Question 3', 262, 16.0, 24, 6.0),
-    createData('Question 4', 305, 3.7, 67, 4.3),
-    createData('Question 5', 356, 16.0, 49, 3.9),
+    createData(
+        'Perfect Secrecy',
+        1,
+        'Show that the Caesar Cipher exhibits perfect secrecy when: (a) used to encrypt a plaintext restricted to one character in length; and (b) when the key is selected from a uniformly distributed random source. In other words, show (analytically, with a formal probabilities argument) that Pr{P | C} = Pr{P }, where P is the plantext and C is the given ciphertext. Hint: Use Bayes’ Theorem, and determine the terms Pr{C | P } and Pr{C}'
+    ),
+    createData(
+        'One-Time Pad',
+        2,
+        'The definition of the OTP includes two requirements: (1) the cryptographic key must be a sequence of truly randomly generated bits; and (2) a cryptographic key must never be reused (the “one-time” in the name). Explain why each of these two requirements are strict conditions for perfect secrecy, Give and explain one example of weakness that derive from failing to meet each of these requirements.'
+    ),
+    createData(
+        'Reusing keys with the Vigenere Cipher',
+        3,
+        'Reusing keys with the Vigenere Cipher Question content: Can we safely reuse an encryption key with the Vigenere cipher? (for the question, assume that the cipher is secure; that is, the question refers to any possible issues with reusing the key independently of any cryptanalysis techniques that we’ve seen)'
+    ),
+    createData(
+        'Confusion and Diffusion',
+        4,
+        'Confusion and Diffusion Question content: For each of the following cryptographic primitives/tools, explain whether it exhibits confusion, diffusion, and in each case explain why: 1. One-time Pad 2. Triple DES 3. AES'
+    ),
 ];
 
 export interface QuestionTableProps {
@@ -32,27 +47,28 @@ export interface QuestionTableProps {
  */
 export const QuestionTable = ({ className }: QuestionTableProps) => {
     return (
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableContainer component={Paper} sx={{ maxWidth: 550, margin: 'auto' }}>
+            <Table sx={{ minWidth: 100 }} aria-label="simple table">
                 <TableHead>
-                    <TableCell>Questions</TableCell>
+                    <TableCell align="center">Question</TableCell>
+                    <TableCell>Title</TableCell>
                 </TableHead>
                 <TableBody>
                     {rows.map((row) => (
-                        <TableRow
-                            key={row.name}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                            <Link to={'/questionAnswer'}>
+                        <TableRow key={row.questionNumber}>
+                            <TableCell align="center">{row.questionNumber}</TableCell>
+                            <Link
+                                to={'/questionAnswer'}
+                                state={{
+                                    questionNumber: row.questionNumber,
+                                    questionTitle: row.questionTitle,
+                                    question: row.question,
+                                }}
+                            >
                                 <TableCell component="th" scope="row">
-                                    {row.name}
+                                    {row.questionTitle}
                                 </TableCell>
                             </Link>
-                            
-                            <TableCell align="right">{row.calories}</TableCell>
-                            <TableCell align="right">{row.fat}</TableCell>
-                            <TableCell align="right">{row.carbs}</TableCell>
-                            <TableCell align="right">{row.protein}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

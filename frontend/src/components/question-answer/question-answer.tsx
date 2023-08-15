@@ -2,15 +2,19 @@ import classNames from 'classnames';
 import styles from './question-answer.module.scss';
 import { TextField, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-export interface QuestionAnswerProps {
-    className?: string;
-}
+import { useLocation } from 'react-router-dom';
+export interface QuestionAnswerProps {}
 
-export const QuestionAnswer = ({ className }: QuestionAnswerProps) => {
-    return (<>
-        <h1>Question 1</h1>
-        <br></br>
-        <div>Lorem Ipsem</div>
-        
-    </>);
+export const QuestionAnswer = () => {
+    const { state } = useLocation();
+    const { question, questionNumber, questionTitle } = state;
+    return (
+        <div className={styles['question-container']}>
+            <h1>
+                Question {questionNumber}: {questionTitle}
+            </h1>
+            <br></br>
+            <p>{question}</p>
+        </div>
+    );
 };
