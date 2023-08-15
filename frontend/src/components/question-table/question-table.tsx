@@ -28,12 +28,12 @@ const rows = [
     createData(
         'Reusing keys with the Vigenere Cipher',
         3,
-        'Reusing keys with the Vigenere Cipher Question content: Can we safely reuse an encryption key with the Vigenere cipher? (for the question, assume that the cipher is secure; that is, the question refers to any possible issues with reusing the key independently of any cryptanalysis techniques that we’ve seen)'
+        'Can we safely reuse an encryption key with the Vigenere cipher? (for the question, assume that the cipher is secure; that is, the question refers to any possible issues with reusing the key independently of any cryptanalysis techniques that we’ve seen)'
     ),
     createData(
         'Confusion and Diffusion',
         4,
-        'Confusion and Diffusion Question content: For each of the following cryptographic primitives/tools, explain whether it exhibits confusion, diffusion, and in each case explain why: 1. One-time Pad 2. Triple DES 3. AES'
+        'For each of the following cryptographic primitives/tools, explain whether it exhibits confusion, diffusion, and in each case explain why: 1. One-time Pad 2. Triple DES 3. AES'
     ),
 ];
 
