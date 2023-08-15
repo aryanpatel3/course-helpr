@@ -4,6 +4,11 @@
     "components": [
       {
         "filePath": "@mui/material",
+        "exportName": "Button",
+        "name": "Button"
+      },
+      {
+        "filePath": "@mui/material",
         "exportName": "TextField",
         "name": "Text Field"
       },

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styles from './home-page.module.scss';
-import { TextField } from '@mui/material';
-
+import { TextField, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 export interface HomePageProps {
     className?: string;
 }
@@ -20,9 +20,14 @@ export const HomePage = ({ className }: HomePageProps) => {
                 </h3>
                 <TextField
                     label={'Course Search'}
-                    helperText={'Solidy your understanding, Get your questions answered, Help others'}
+                    helperText={
+                        'Solidify your understanding, Get your questions answered, Help others'
+                    }
                     fullWidth={true}
                 />
+                <Link to={'/explore'}>
+                    <Button variant="contained">Explore All Courses</Button>
+                </Link>
             </div>
         </div>
     );

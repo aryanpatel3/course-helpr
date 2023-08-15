@@ -1,2 +1,13 @@
 .root {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding: 1rem;
+}
+.logo {
+  margin: 0px 100px 0px 0px;
+  font-size: 2em;
+  align-self: center;
+}
+.navbar {
 }
