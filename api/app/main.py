@@ -2,7 +2,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-
 @app.get('/api/healthchecker')
 def root():
-    return {'message': 'Hello World'}
+    return {'message': 'Server is healthy.'}
